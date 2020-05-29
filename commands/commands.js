@@ -1,0 +1,28 @@
+/**
+ * The commands command will list all of the commands in the bot
+ * 
+ * @author Jess Queen
+ */
+module.exports = {
+    name: "commands",
+    description: "lists all of the commands that the user can perform",
+    execute(msg, args, Discord) {
+        var listOfCommands = "List of Commands:\n!ping - Pings the bot\n" +
+                                "!info <version or author> - See information about this bot\n" +
+                                "!dice - Rolls a 6 sided die\n" + 
+                                "!dice <number> - Rolls a die with <number> of sides\n" +
+                                "!chance <thing> - Tells you the chance that <thing> will happen with 100% accuracy\n" +
+                                "!8ball <question> - Give you a magic 8 ball response to <question>\n" +
+                                "!insult <person> - Insults <person> with a random insult\n" +
+                                "!choice <thing1> | <thing2> - Generate a choice poll between two options\n" +
+                                "!pick <thing1> or <thing2> - Make the bot pick between two things\n" +
+                                "!poll <question> - Generate a simple yes/no poll\n" +
+                                "!commands - List all valid commands this bot offers";
+            const commands = new Discord.MessageEmbed()
+            .setColor(0xFFD700)
+            .setTitle("List of Commands")
+            .setDescription(listOfCommands);
+
+            msg.channel.send(commands);
+    }
+}
