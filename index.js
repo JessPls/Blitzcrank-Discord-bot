@@ -81,6 +81,10 @@ bot.on('message', msg=>{
         case 'commands':
             bot.commands.get('commands').execute(msg, args, Discord);
             break;
+        // command for setting up bot messages on the server, will be removed/improved later
+        case 'setup':
+            bot.commands.get('setup').execute(msg, args);
+            break;
        }
 })
 
