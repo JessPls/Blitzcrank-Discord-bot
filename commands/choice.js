@@ -25,6 +25,9 @@ module.exports = {
                     choice2 += args[i] + " ";
                 }
             }
+
+            // delete the initial message and replace it with the poll
+            msg.delete();
             msg.channel.send(choice1 + "(🅰️) or " + choice2 + "(🅱️)?").then(messageReaction => {
                 messageReaction.react("🅰️");
                 messageReaction.react("🅱️");

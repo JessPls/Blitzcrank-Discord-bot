@@ -17,7 +17,7 @@ const PREFIX = '!';
 const fs = require('fs');
 bot.commands = new Discord.Collection();
 
-// token used for activating the bot
+// token used for activating the bot. Please create your own token.txt file
 const TOKEN = fs.readFileSync('token.txt', 'utf8');
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -47,7 +47,7 @@ bot.on('message', msg=>{
             break;
         // info command for seeing bot version and author
         case 'info':
-            bot.commands.get('info').execute(msg, args);
+            bot.commands.get('info').execute(msg, args, Discord);
             break;
         // dice command for rolling a 20 sided dice
         case 'dice':
@@ -77,10 +77,18 @@ bot.on('message', msg=>{
         case 'poll':
             bot.commands.get('poll').execute(msg, args, Discord);
             break;
+        // command for viewing the changelog for the latest version
+        case 'changelog':
+            bot.commands.get('changelog').execute(msg, args, Discord);
+            break;
         // command for listing all of the commands in this bot
         case 'commands':
             bot.commands.get('commands').execute(msg, args, Discord);
             break;
+        // command for setting up bot messages on the server, will be removed/improved later
+        /**case 'setup':
+            bot.commands.get('setup').execute(msg, args);
+            break;*/
        }
 })
 

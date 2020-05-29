@@ -8,7 +8,7 @@ module.exports = {
     description: "lists all of the commands that the user can perform",
     execute(msg, args, Discord) {
         var listOfCommands = "List of Commands:\n!ping - Pings the bot\n" +
-                                "!info <version or author> - See information about this bot\n" +
+                                "!info <version,author,purpose,wiki> - See information about this bot\n" +
                                 "!dice - Rolls a 6 sided die\n" + 
                                 "!dice <number> - Rolls a die with <number> of sides\n" +
                                 "!chance <thing> - Tells you the chance that <thing> will happen with 100% accuracy\n" +
