@@ -10,19 +10,15 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-// token used for activating the bot
-<<<<<<< HEAD
-const TOKEN = 'NzE1NjI3MzYzOTYyMDYwODEw.XtCPRQ.AKuLle4dV8_qb3dHA1ppWMm5Z5k';
-=======
-const TOKEN = 'Your token here';
->>>>>>> e5f9f9fc2fd5b9382f672c4d56337a98ad37dbfd
-
 // prefix used for recognizing when the user is using a command
 const PREFIX = '!';
 
 // set up the command handler
 const fs = require('fs');
 bot.commands = new Discord.Collection();
+
+// token used for activating the bot
+const TOKEN = fs.readFileSync('token.txt', 'utf8');
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
