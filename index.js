@@ -11,7 +11,7 @@ const bot = new Discord.Client();
 var version = "1.0.0";
 
 // token used for activating the bot
-const TOKEN = 'NzE1NjI3MzYzOTYyMDYwODEw.XtAAlg.CQchbyzPypcJIZ9e7rm1dlU8EQA';
+const TOKEN = 'Your token here';
 
 // prefix used for recognizing when the user is using a command
 const PREFIX = '!';
