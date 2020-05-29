@@ -19,6 +19,7 @@ module.exports = {
             msg.channel.send(Embed);
         } else {
             let question = args.slice(1).join(" ");
+            msg.delete();
             msg.channel.send(question).then(messageReaction  => {
                 messageReaction.react("👍");
                 messageReaction.react("👎");
