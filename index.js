@@ -11,7 +11,11 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 // token used for activating the bot
+<<<<<<< HEAD
 const TOKEN = 'NzE1NjI3MzYzOTYyMDYwODEw.XtCPRQ.AKuLle4dV8_qb3dHA1ppWMm5Z5k';
+=======
+const TOKEN = 'Your token here';
+>>>>>>> e5f9f9fc2fd5b9382f672c4d56337a98ad37dbfd
 
 // prefix used for recognizing when the user is using a command
 const PREFIX = '!';
