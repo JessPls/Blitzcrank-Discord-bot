@@ -13,7 +13,7 @@ module.exports = {
                         " of a super long index.js file\n - Added the !info purpose and !info " +
                         "wiki commands\n - Fixed security concern with the bot token\n" +
                         " - Changed the !dice command to accept a parameter for the number " +
-                        "of sides on the die");
+                        "of sides on the die\n - Added the !changelog command");
         
         msg.channel.send(changelog);
     }
