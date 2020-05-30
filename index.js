@@ -56,7 +56,7 @@ bot.on('message', msg=>{
         // dice command for rolling a 20 sided dice
         case 'dice':
         case 'Dice':
-            bot.commands.get('dice').execute(msg, args);
+            bot.commands.get('dice').execute(msg, args, Discord);
             break;
         // command for generating the chance something happens
         case 'chance':
