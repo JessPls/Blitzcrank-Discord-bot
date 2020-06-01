@@ -37,72 +37,66 @@ bot.on('ready', () =>{
 
 // perform commands
 bot.on('message', msg=>{
-    
-    // get the command name if the prefix is used
-    let args = msg.content.substring(PREFIX.length).split(" ");
+    if (msg.user === bot.user) {
+        // don't do anything
+    } else {
+        // get the command name if the prefix is used
+        let args = msg.content.substring(PREFIX.length).split(" ");
 
-    // interpret the commands
-    switch(args[0]) {
-        // ping command for testing responsiveness
-        case 'ping':
-        case 'Ping':
-            bot.commands.get('ping').execute(msg, args);
-            break;
-        // info command for seeing bot version and author
-        case 'info':
-        case 'Info':
-            bot.commands.get('info').execute(msg, args, Discord);
-            break;
-        // dice command for rolling a 20 sided dice
-        case 'dice':
-        case 'Dice':
-            bot.commands.get('dice').execute(msg, args, Discord);
-            break;
-        // command for generating the chance something happens
-        case 'chance':
-        case 'Chance':
-            bot.commands.get('chance').execute(msg, args);
-            break;
-        // command for using a magic 8 ball
-        case '8ball':
-        case '8Ball':
-            bot.commands.get('8ball').execute(msg, args);
-            break;
-        // command that generates a random, silly insult
-        case 'insult':
-        case 'Insult':
-            bot.commands.get('insult').execute(msg, args);
-            break;
-        // command for choosing between two options
-        case 'choice':
-        case 'Choice':
-            bot.commands.get('choice').execute(msg, args);
-            break;
-        // command for making the bot choose between 2 options
-        case 'pick':
-        case 'Pick':
-            bot.commands.get('pick').execute(msg, args);
-            break;
-        // command for creating a poll with 2 options
-        case 'poll':
-        case 'Poll':
-            bot.commands.get('poll').execute(msg, args, Discord);
-            break;
-        // command for viewing the changelog for the latest version
-        case 'changelog':
-        case 'Changelog':
-            bot.commands.get('changelog').execute(msg, args, Discord);
-            break;
-        // command for listing all of the commands in this bot
-        case 'commands':
-        case 'Commands':
-            bot.commands.get('commands').execute(msg, args, Discord);
-            break;
-        // command for setting up bot messages on the server, will be removed/improved later
-        /**case 'setup':
-            bot.commands.get('setup').execute(msg, args);
-            break;*/
-       }
+        // interpret the commands
+        switch(args[0].toLocaleLowerCase()) {
+            // ping command for testing responsiveness
+            case 'ping':
+                bot.commands.get('ping').execute(msg, args);
+                break;
+            // info command for seeing bot version and author
+            case 'info':
+                bot.commands.get('info').execute(msg, args, Discord);
+                break;
+            // dice command for rolling a 20 sided dice
+            case 'dice':
+                bot.commands.get('dice').execute(msg, args, Discord);
+                break;
+            // command for generating the chance something happens
+            case 'chance':
+                bot.commands.get('chance').execute(msg, args);
+                break;
+            // command for using a magic 8 ball
+            case '8ball':
+                bot.commands.get('8ball').execute(msg, args);
+                break;
+            // command that generates a random, silly insult
+            case 'insult':
+                bot.commands.get('insult').execute(msg, args);
+                break;
+            // command for choosing between two options
+            case 'choice':
+                bot.commands.get('choice').execute(msg, args);
+                break;
+            // command for making the bot choose between 2 options
+            case 'pick':
+                bot.commands.get('pick').execute(msg, args, Discord);
+                break;
+            // command for creating a poll with 2 options
+            case 'poll':
+                bot.commands.get('poll').execute(msg, args, Discord);
+                break;
+            // command for viewing the changelog for the latest version
+            case 'changelog':
+                bot.commands.get('changelog').execute(msg, args, Discord);
+                break;
+            // command for listing all of the commands in this bot
+            case 'commands':
+                bot.commands.get('commands').execute(msg, args, Discord);
+                break;
+            // command for setting up bot messages on the server, will be removed/improved later
+            /**case 'setup':
+                bot.commands.get('setup').execute(msg, args);
+                break;*/
+            default:
+                //msg.reply("invald command! Please use !commands to see a list of all valid commands.");
+        }
+    }
 })
 
 bot.login(TOKEN);
