@@ -2,7 +2,7 @@
  * The info command allows the user to see many different things about the bot, such as the
  * current version or the author of the bot
  * 
- * v1.0.2 - Added purpose easter egg
+ * v1.0.2 - Added purpose easter egg, command now works regardless of case
  * 
  * @author Jess Queen
  * @author Joel Kophazi
@@ -17,11 +17,11 @@ module.exports = {
     execute(msg, args, Discord) {
         if (!args[1]) {
             msg.reply("Error! Please specify a second argument!");}
-        else if (args[1].toLocaleLowerCase() === 'version' || args[1] === 'Version') {
+        else if (args[1].toLocaleLowerCase() === 'version') {
             msg.channel.send("Version " + version);}
-        else if (args[1].toLocaleLowerCase() === 'author' || args[1] === 'Author') {
-            msg.channel.send("This bot was written by Jess");}
-        else if (args[1] === 'purpose' || args[1] === 'Purpose') {
+        else if (args[1].toLocaleLowerCase() === 'author') {
+            msg.channel.send("This bot was written by Jess and Joel");}
+        else if (args[1].toLocaleLowerCase() === 'purpose') {
             var ran = Math.random()
             if (ran <= 0.90) {
                 msg.channel.send("Blitzcrank provides some QoL features such as polling and dice " +
@@ -41,7 +41,7 @@ module.exports = {
             else {
                 msg.channel.send("I am the only one " + "who knows what must be done. At least, I am" + 
                                     " the only one with the will to act on it.");}
-        } else if (args[1] === 'wiki' || args[1] === 'Wiki') {
+        } else if (args[1].toLocaleLowerCase() === 'wiki') {
             const wiki = new Discord.MessageEmbed()
             .setColor(0xFFD700)
             .setTitle("Blitzcrank Wiki")

@@ -11,7 +11,7 @@ module.exports = {
         var response = "The chance ";
             for (var i = 1; i < args.length; i++) {
                 // replace any I's with you's for grammar
-                if (args[i].toLocaleLowerCase() === "I" || args[i].toLocaleLowerCase() === "me") {
+                if (args[i].toLocaleLowerCase() === "i" || args[i].toLocaleLowerCase() === "me") {
                     response += "you ";
                 } else if (args[i].toLocaleLowerCase() === "my") {
                     response += "your ";
