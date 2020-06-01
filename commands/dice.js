@@ -8,13 +8,13 @@
  */
 module.exports = {
     name: "dice",
-    description: "rolls a give number sided die",
+    description: "rolls a given number sided die",
     execute(msg, args, Discord) {
         var sides = 6;
         var n = 0;
         var loops = 1;
         var limit = 20;
-        if (args[1] == "help" || args[1] == "Help") {
+        if (args[1].toLocaleLowerCase() == "help") {
             const diceHelp = new Discord.MessageEmbed()
             .setColor(0xFFD700)
             .setTitle("Help - Dice")
@@ -28,12 +28,11 @@ module.exports = {
                             '"!dice <sides> <number of die>" - Rolls a dice with <sides> number of sides <number of die> times\n' +
                                 'Example: !dice 20 3\n' +
                                 'Output:  "You rolled 3 dice for a total of 29!"\n\n' +
-                            '"!dice #d#" - Rolls a number of dice with a number of sides, formated in dice notation\n' +
+                            '"!dice #d#" - Rolls a number of dice with a number of sides, formatted in dice notation\n' +
                                 'Example: !dice 4d12\n' +
                                 'Output:  "You rolled 4 dice for a total of 27!"\n');
             msg.channel.send(diceHelp);
-            return
-        }
+            return}
         if (args[2] && parseInt(args[2])) {
             loops = parseInt(args[2]);}
         if (args[1] && parseInt(args[1])) {

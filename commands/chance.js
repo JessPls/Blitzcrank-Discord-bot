@@ -7,15 +7,15 @@
 module.exports = {
     name: "chance",
     description: "generates a random chance that something will happen",
-    execute(msg, args) {
+    execute(msg, args, Discord) {
         var response = "The chance ";
             for (var i = 1; i < args.length; i++) {
                 // replace any I's with you's for grammar
-                if (args[i] === "I" || args[i] === "me") {
+                if (args[i].toLocaleLowerCase() === "I" || args[i].toLocaleLowerCase() === "me") {
                     response += "you ";
-                } else if (args[i] === "my") {
+                } else if (args[i].toLocaleLowerCase() === "my") {
                     response += "your ";
-                } else if (args[i] === "mine") {
+                } else if (args[i].toLocaleLowerCase() === "mine") {
                     response += "yours ";
                 } else {
                     response += args[i] + " ";

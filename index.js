@@ -47,7 +47,7 @@ bot.on('message', msg=>{
         switch(args[0].toLocaleLowerCase()) {
             // ping command for testing responsiveness
             case 'ping':
-                bot.commands.get('ping').execute(msg, args);
+                bot.commands.get('ping').execute(msg, args, Discord);
                 break;
             // info command for seeing bot version and author
             case 'info':
@@ -59,19 +59,19 @@ bot.on('message', msg=>{
                 break;
             // command for generating the chance something happens
             case 'chance':
-                bot.commands.get('chance').execute(msg, args);
+                bot.commands.get('chance').execute(msg, args, Discord);
                 break;
             // command for using a magic 8 ball
             case '8ball':
-                bot.commands.get('8ball').execute(msg, args);
+                bot.commands.get('8ball').execute(msg, args, Discord);
                 break;
             // command that generates a random, silly insult
             case 'insult':
-                bot.commands.get('insult').execute(msg, args);
+                bot.commands.get('insult').execute(msg, args, Discord);
                 break;
             // command for choosing between two options
             case 'choice':
-                bot.commands.get('choice').execute(msg, args);
+                bot.commands.get('choice').execute(msg, args, Discord);
                 break;
             // command for making the bot choose between 2 options
             case 'pick':

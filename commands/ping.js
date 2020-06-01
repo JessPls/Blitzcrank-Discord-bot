@@ -9,7 +9,7 @@
 module.exports = {
     name: 'ping',
     description: "says pong!",
-    execute(msg, args) {
+    execute(msg, args, Discord) {
         msg.reply('pong!');
     }
 }

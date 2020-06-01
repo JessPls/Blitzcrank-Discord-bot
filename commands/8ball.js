@@ -6,7 +6,7 @@
 module.exports = {
     name: "8ball",
     description: "generates a magic 8 ball message, can be in response to a question",
-    execute(msg, args) {
+    execute(msg, args, Discord) {
         var response = "";
             var num = Math.floor(Math.random() * 20 + 1);
 
@@ -16,7 +16,7 @@ module.exports = {
             } else if (num == 2) {
                 response = "ask again later.";
             } else if (num == 3) {
-                response = "aetter not tell you now.";
+                response = "better not tell you now.";
             } else if (num == 4) {
                 response = "cannot predict now";
             } else if (num == 5) {

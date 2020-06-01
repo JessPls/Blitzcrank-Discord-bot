@@ -16,12 +16,12 @@ module.exports = {
     description: 'gives information about the bot',
     execute(msg, args, Discord) {
         if (!args[1]) {
-            msg.reply("Error! Please specify a second argument!");
-        } else if (args[1] === 'version' || args[1] === 'Version') {
-            msg.channel.send("Version " + version);
-        } else if (args[1] === 'author' || args[1] === 'Author') {
-            msg.channel.send("This bot was written by Jess");
-        } else if (args[1] === 'purpose' || args[1] === 'Purpose') {
+            msg.reply("Error! Please specify a second argument!");}
+        else if (args[1].toLocaleLowerCase() === 'version' || args[1] === 'Version') {
+            msg.channel.send("Version " + version);}
+        else if (args[1].toLocaleLowerCase() === 'author' || args[1] === 'Author') {
+            msg.channel.send("This bot was written by Jess");}
+        else if (args[1] === 'purpose' || args[1] === 'Purpose') {
             var ran = Math.random()
             if (ran <= 0.90) {
                 msg.channel.send("Blitzcrank provides some QoL features such as polling and dice " +

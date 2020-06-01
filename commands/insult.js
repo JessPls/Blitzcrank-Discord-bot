@@ -7,7 +7,7 @@
 module.exports = {
     name: "insult",
     description: "generates a random movie quote insult",
-    execute(msg, args) {
+    execute(msg, args, Discord) {
         if (!args[1]) {
             msg.reply("Error! Please specify a person to insult!");
         } else {

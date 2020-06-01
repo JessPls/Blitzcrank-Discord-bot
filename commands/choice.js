@@ -7,7 +7,7 @@
 module.exports = {
     name: "choice",
     description: "creates a poll where the user can choose between two options",
-    execute(msg, args) {
+    execute(msg, args, Discord) {
         if (!args[1] || !args[2]) {
             msg.reply("Error! Please specify two things to choose between!");
         } else {
