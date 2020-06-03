@@ -13,7 +13,8 @@ module.exports = {
         var sides = 6;
         var n = 0;
         var loops = 1;
-        var limit = 20;
+        var limitRolls = 20;
+        var limitSides = 101;
         if (args[1].toLocaleLowerCase() == "help") {
             const diceHelp = new Discord.MessageEmbed()
             .setColor(0xFFD700)
@@ -42,14 +43,19 @@ module.exports = {
             if (stri.search("d") == 1 || stri.search("D") == 1) {
                 loops = parseInt(stri.substr(0,1));
                 sides = parseInt(stri.substr(2,1));}}
-        if (loops <= limit) {
+        if (loops <= limitRolls && sides <= limitSides) {
             for (round = 0; round < loops; round++) {
                 var n = n + Math.floor(Math.random() * sides + 1);}
             if (loops === 1) {
                 msg.reply("You rolled a " + n + "!");}
             else {
                 msg.reply("You rolled " + loops + " dice for a total of " + n + "!");}}
+        else if (sides <= limitSides) {
+            msg.reply("You rolled too many dice (limit = " + limitRolls + ")");}
         else {
-            msg.reply("You rolled too many dice (limit = " + limit + ")");}
+            msg.reply("As the dice tumble onto the table, you look on in abject horror as they continually roll, " + 
+            "as the imense number of sides are indecernable from eachother. You are quickly overwhelmed by the perpetually " + 
+            "moving mass of \"dice\", eventually admitting defeat as they overthrow your household and build a new world " + 
+            "from the rubble (Dice can only have " + limitSides + " sides.)")}
     }
 }

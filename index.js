@@ -37,9 +37,8 @@ bot.on('ready', () =>{
 
 // perform commands
 bot.on('message', msg=>{
-    if (msg.user === bot.user) {
-        // don't do anything
-    } else {
+    if (msg.user === bot.user) {} // don't do anything
+    else {
         // get the command name if the prefix is used
         let args = msg.content.substring(PREFIX.length).split(" ");
 

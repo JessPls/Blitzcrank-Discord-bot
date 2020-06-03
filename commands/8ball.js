@@ -7,6 +7,19 @@ module.exports = {
     name: "8ball",
     description: "generates a magic 8 ball message, can be in response to a question",
     execute(msg, args, Discord) {
+        if (args[1].toLocaleLowerCase() == "help") {
+            const ballHelp = new Discord.MessageEmbed()
+            .setColor(0xFFD700)
+            .setTitle("Help - 8Ball")
+            .setDescription('Description:\n' +
+                            "America's favorite occult toy is back, and less physical than ever. Simply ask " + 
+                            "it a question and get a responce that is guaranteed to potentially be english!\n\n" +
+                            'Syntax: \n\n' + 
+                            '"!8ball <question>\n"' +
+                            'Example: "!8ball  how screwed is the USA right now?"\n' +
+                            'Output: "better not tell you now"');
+            msg.channel.send(ballHelp);
+            return}
         var response = "";
             var num = Math.floor(Math.random() * 20 + 1);
 
