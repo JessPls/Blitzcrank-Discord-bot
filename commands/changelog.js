@@ -1,6 +1,8 @@
 /**
  * The !changelog command will print out the changelog from the most recent version,
  * so that the user does not have to visit the wiki to see what is new
+ * 
+ * @author Jess Queen
  */
 module.exports = {
     name: "changelog",
@@ -8,12 +10,14 @@ module.exports = {
     execute(msg, args, Discord) {
         const changelog = new Discord.MessageEmbed()
         .setColor(0xFFD700)
-        .setTitle("Changelog Version 1.0.1")
-        .setDescription(" - Changed the organization of the bot to use a Command Handler instead" +
-                        " of a super long index.js file\n - Added the !info purpose and !info " +
-                        "wiki commands\n - Fixed security concern with the bot token\n" +
-                        " - Changed the !dice command to accept a parameter for the number " +
-                        "of sides on the die\n - Added the !changelog command");
+        .setTitle("Changelog Version 1.0.2")
+        .setDescription(" - Changed the !dice command to allow multiple dice to be rolled at " +
+                        "once\n - Changed the !pick command to be able to pick between " +
+                        "more than 2 options\n - Added help options for !dice and !pick " +
+                        " that can be accessed with !<command> help\n - Added fallback for " +
+                        "invalid commands\n - Updated the !commands command to be more " +
+                        " descriptive\n - Added an easter egg (Shhh it's a secret!)\n" +
+                        " - Started prepping for v1.1.0");
         
         msg.channel.send(changelog);
     }

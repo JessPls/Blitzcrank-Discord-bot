@@ -2,7 +2,7 @@
  * The info command allows the user to see many different things about the bot, such as the
  * current version or the author of the bot
  * 
- * v1.0.2 - Added purpose easter egg
+ * v1.0.2 - Added purpose easter egg, command now works regardless of case
  * 
  * @author Jess Queen
  * @author Joel Kophazi
@@ -15,9 +15,10 @@ module.exports = {
     name: 'info',
     description: 'gives information about the bot',
     execute(msg, args, Discord) {
+        if (!args[1]) {
+            msg.reply("Error! Please specify a second argument!");}
+            return;
         switch(args[1].toLocaleLowerCase()){
-            case '':
-                msg.reply("Error! Please specify a second argument!");
             case 'version': 
                 msg.channel.send("Version " + version);
             case 'author':

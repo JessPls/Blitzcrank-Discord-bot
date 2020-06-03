@@ -1,7 +1,10 @@
 /**
  * The commands command will list all of the commands in the bot
+ * 
  * v1.0.2 - Updated dice command description
+ * 
  * @author Jess Queen
+ * @author Joel Kophazi
  */
 module.exports = {
     name: "commands",
@@ -18,7 +21,7 @@ module.exports = {
                                 "!pick <thing1> or <thing2> or ... - Make the bot pick between two or more things\n" +
                                 "!poll <question> - Generate a simple yes/no poll\n" +
                                 "!commands - List all valid commands this bot offers\n\n" +
-                                "{text} - optional"
+                                "{text} - optional\n<text> - required"
             const commands = new Discord.MessageEmbed()
             .setColor(0xFFD700)
             .setTitle("List of Commands")
