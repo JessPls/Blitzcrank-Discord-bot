@@ -15,14 +15,28 @@ module.exports = {
     name: 'info',
     description: 'gives information about the bot',
     execute(msg, args, Discord) {
+        const infoHelp = new Discord.MessageEmbed()
+        .setColor(0xFFD700)
+        .setTitle("Help - " + module.exports.name)
+        .setDescription('Description:\n' +
+                        module.exports.description +
+                        "\n\n" +
+                        'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
+                        '"!info <wiki/version/author/purpose>"\n' +                //configuration of arguments
+                            'Example: "!info version"\n' + 
+                            'Output:  "Version ' + version + '"\n\n' + 
+                        'Other Information:\n' + 
+                        'Only enter one option from the list given');
         if (!args[1]) {
-            msg.reply("Error! Please specify a second argument!");}
-            return;
+            msg.channel.send(infoHelp);
+            return;} 
         switch(args[1].toLocaleLowerCase()){
             case 'version': 
                 msg.channel.send("Version " + version);
+                break;
             case 'author':
                 msg.channel.send("This bot was written by Jess and Joel");
+                break;
             case 'purpose':
                 var ran = Math.random()
                 if (ran <= 0.90) {
@@ -43,15 +57,17 @@ module.exports = {
                 else {
                     msg.channel.send("I am the only one who knows what must be done. At least, I am" + 
                                         " the only one with the will to act on it.");}
+                break;
             case 'wiki':
                 const wiki = new Discord.MessageEmbed()
                 .setColor(0xFFD700)
                 .setTitle("Blitzcrank Wiki")
                 .setURL("https://github.com/Koopafan75/Blitzcrank-Discord-bot/wiki");
                 msg.channel.send(wiki);
+                break;
             default:
                 // invalid arguments
-                msg.reply("Invalid arguments!");
+                msg.channel.send(infoHelp);
         }
     }
 }

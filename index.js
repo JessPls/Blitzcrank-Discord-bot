@@ -86,6 +86,7 @@ bot.on('message', msg=>{
                 break;
             // command for listing all of the commands in this bot
             case 'commands':
+            case 'help':
                 bot.commands.get('commands').execute(msg, args, Discord);
                 break;
             // command for setting up bot messages on the server, will be removed/improved later

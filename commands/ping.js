@@ -10,6 +10,21 @@ module.exports = {
     name: 'ping',
     description: "says pong!",
     execute(msg, args, Discord) {
-        msg.reply('pong!');
+        const pingHelp = new Discord.MessageEmbed()
+        .setColor(0xFFD700)
+        .setTitle("Help - " + module.exports.name)
+        .setDescription('Description:\n' +
+                        module.exports.description +
+                        "\n\n" +
+                        'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
+                        '"!ping"\n' +                //configuration of arguments
+                            'Example: "!ping"\n' + 
+                            'Output:  "!ping"\n\n' + 
+                        'Other Information:\n');
+        if (args[1] && args[1].toLocaleLowerCase() == "help") {
+            msg.channel.send(pingHelp);
+            }
+        else {
+        msg.reply('pong!');}
     }
 }

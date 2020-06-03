@@ -13,15 +13,18 @@ module.exports = {
         const pickHelp = new Discord.MessageEmbed()
         .setColor(0xFFD700)
         .setTitle("Help - Pick")
-        .setDescription('Syntax: \n\n!pick <choice1> or <choice2> or ...\n' +
-                        'Example: !pick this or that or these or those\n' +
-                        'Output: "I pick these!"');
-
+        .setDescription('Description:\n' +
+                        module.exports.description +
+                        "\n\n" +
+                        'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
+                        '"!pick <choice1> or <choice2> or ..."\n' +                //configuration of arguments
+                            'Example: "!pick this or that or these or those"\n' + 
+                            'Output:  ""I pick these!""\n\n');
         // invalid command or help command
-        if (!(args.includes("or") || args.includes("Or") || args.includes("oR") ||
-            args.includes("OR")) || msg.content.toLocaleLowerCase() === "!pick help") {
-            msg.reply(pickHelp);
-        } else {
+        if (!(args.includes("or") || !args.includes("Or") || !args.includes("oR") ||
+            !args.includes("OR")) || args[1].toLocaleLowerCase() == "help") {
+            msg.reply(pickHelp);}
+        else {
             const OR = "or";
             var choice = "I pick ";
             var curChoice = "";
@@ -34,7 +37,6 @@ module.exports = {
                     options.push(curChoice);
                     curChoice = "";
                     numChoices++;
-
                     // make sure there is something after the or
                     if (!args[i + 1]) {
                         msg.reply(pickHelp);

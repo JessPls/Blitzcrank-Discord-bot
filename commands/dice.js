@@ -8,54 +8,71 @@
  */
 module.exports = {
     name: "dice",
-    description: "rolls a given number sided die",
+    description: "rolls a given number sided die a given amount of times",
     execute(msg, args, Discord) {
-        var sides = 6;
-        var n = 0;
-        var loops = 1;
-        var limitRolls = 20;
-        var limitSides = 101;
-        if (args[1].toLocaleLowerCase() == "help") {
-            const diceHelp = new Discord.MessageEmbed()
-            .setColor(0xFFD700)
-            .setTitle("Help - Dice")
-            .setDescription('Syntax: \n\n' + 
-                            '"!dice" - Rolls a 6-sided dice and give output \n' +
-                                'Example: !dice\n' +
-                                'Output:  "You rolled a 4!"\n\n' +
-                            '"!dice <sides>" - Rolls a dice with <sides> number of sides\n' + 
-                                'Example: !dice 20\n' +
-                                'Output:  "You rolled a 13!"\n\n' +
-                            '"!dice <sides> <number of die>" - Rolls a dice with <sides> number of sides <number of die> times\n' +
-                                'Example: !dice 20 3\n' +
-                                'Output:  "You rolled 3 dice for a total of 29!"\n\n' +
-                            '"!dice #d#" - Rolls a number of dice with a number of sides, formatted in dice notation\n' +
-                                'Example: !dice 4d12\n' +
-                                'Output:  "You rolled 4 dice for a total of 27!"\n');
-            msg.channel.send(diceHelp);
-            return}
-        if (args[2] && parseInt(args[2])) {
-            loops = parseInt(args[2]);}
-        if (args[1] && parseInt(args[1])) {
-            sides = parseInt(args[1]);}
-        var stri = args[1];
-        if (args[1]) {
-            if (stri.search("d") == 1 || stri.search("D") == 1) {
-                loops = parseInt(stri.substr(0,1));
-                sides = parseInt(stri.substr(2,1));}}
-        if (loops <= limitRolls && sides <= limitSides) {
-            for (round = 0; round < loops; round++) {
-                var n = n + Math.floor(Math.random() * sides + 1);}
-            if (loops === 1) {
-                msg.reply("You rolled a " + n + "!");}
-            else {
-                msg.reply("You rolled " + loops + " dice for a total of " + n + "!");}}
-        else if (sides <= limitSides) {
-            msg.reply("You rolled too many dice (limit = " + limitRolls + ")");}
+        const diceHelp = new Discord.MessageEmbed()
+        .setColor(0xFFD700)
+        .setTitle("Help - " + module.exports.name)
+        .setDescription('Description:\n' +
+                        module.exports.description +
+                        "\n\n" +
+                        'Syntax: \n\n' + 
+                        '"!dice" - Rolls a 6-sided dice and give output \n' +
+                            'Example: !dice\n' +
+                            'Output:  "You rolled a 4!"\n\n' +
+                        '"!dice <sides>" - Rolls a dice with <sides> number of sides\n' + 
+                            'Example: !dice 20\n' +
+                            'Output:  "You rolled a 13!"\n\n' +
+                        '"!dice <sides> <number of die>" - Rolls a dice with <sides> number of sides <number of die> times\n' +
+                            'Example: !dice 20 3\n' +
+                            'Output:  "You rolled 3 dice for a total of 29!"\n\n' +
+                        '"!dice #d#" - Rolls a number of dice with a number of sides, formatted in dice notation\n' +
+                            'Example: !dice 4d12\n' +
+                            'Output:  "You rolled 4 dice for a total of 27!"\n\n' + 
+                        'Other Information:\n' + 
+                            'All options must be numbers using the 0-9 keys');
+        if (args[1].toLocaleLowerCase() == "help") {       
+            msg.channel.send(diceHelp);}
         else {
-            msg.reply("As the dice tumble onto the table, you look on in abject horror as they continually roll, " + 
-            "as the imense number of sides are indecernable from eachother. You are quickly overwhelmed by the perpetually " + 
-            "moving mass of \"dice\", eventually admitting defeat as they overthrow your household and build a new world " + 
-            "from the rubble (Dice can only have " + limitSides + " sides.)")}
+            var sides = 6;
+            var n = 0;
+            var loops = 1;
+            var limitRolls = 20;
+            var limitSides = 360;
+            if (args[2]){
+                if(parseInt(args[2])) {
+                    loops = parseInt(args[2]);}
+                else {
+                    msg.reply("Please make sure all options are numbers using the 0-9 keys")
+                    return}
+                }
+            if (args[1]){
+                if(parseInt(args[1])) {
+                    sides = parseInt(args[1]);}
+                else {
+                    msg.reply("Please make sure all options are numbers using the 0-9 keys")
+                    return}
+                }
+            var stri = args[1];
+            if (args[1]) {              //modifies the data in case of #d# format
+                if (stri.search("d") == 1 || stri.search("D") == 1) {
+                    loops = parseInt(stri.substr(0,1));
+                    sides = parseInt(stri.substr(2,1));}}
+            if (loops <= limitRolls && sides <= limitSides) {   // performs the rolling if the loops and numbers are not too high
+                for (round = 0; round < loops; round++) {
+                    var n = n + Math.floor(Math.random() * sides + 1);}
+                if (loops === 1) {
+                    msg.reply("You rolled a " + n + "!");}
+                else {
+                    msg.reply("You rolled " + loops + " dice for a total of " + n + "!");}
+                }
+            else if (sides <= limitSides) {           //error message for too many dice (to prevent program loops bogging down the bot)
+                msg.reply("You rolled too many dice (limit = " + limitRolls + ")");}
+            else {                                    //error message for dice having too many sides
+                msg.reply("As the dice tumble onto the table, you look on in abject horror as they continually roll, " + 
+                "as the imense number of sides are indecernable from eachother. You are quickly overwhelmed by the perpetually " + 
+                "moving mass of \"dice\", eventually admitting defeat as they overthrow your household and build a new world " + 
+                "from the rubble (Dice can only have " + limitSides + " sides.)")}
+        }
     }
 }
