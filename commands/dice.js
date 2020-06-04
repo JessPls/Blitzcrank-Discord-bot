@@ -31,7 +31,7 @@ module.exports = {
                             'Output:  "You rolled 4 dice for a total of 27!"\n\n' + 
                         'Other Information:\n' + 
                             'All options must be numbers using the 0-9 keys');
-        if (args[1].toLocaleLowerCase() == "help") {       
+        if (args[1] && args[1].toLocaleLowerCase() == "help") {       
             msg.channel.send(diceHelp);}
         else {
             var sides = 6;
@@ -52,12 +52,17 @@ module.exports = {
                 else {
                     msg.reply("Please make sure all options are numbers using the 0-9 keys")
                     return}
-                }
-            var stri = args[1];
-            if (args[1]) {              //modifies the data in case of #d# format
-                if (stri.search("d") == 1 || stri.search("D") == 1) {
-                    loops = parseInt(stri.substr(0,1));
-                    sides = parseInt(stri.substr(2,1));}}
+            }
+            if (args[1]) {     
+                var stri = args[1].toLocaleLowerCase();         //modifies the data in case of #d# format
+                var negOne = -1;
+                if (stri.indexOf("d") !== negOne) {
+                    var r = stri.indexOf("d");
+                    r = r + 1;
+                    var endlen = args[1].length;
+                    endlen = endlen;
+                    loops = parseInt(args[1]);
+                    sides = parseInt(stri.slice(r,endlen));}}
             if (loops <= limitRolls && sides <= limitSides) {   // performs the rolling if the loops and numbers are not too high
                 for (round = 0; round < loops; round++) {
                     var n = n + Math.floor(Math.random() * sides + 1);}
