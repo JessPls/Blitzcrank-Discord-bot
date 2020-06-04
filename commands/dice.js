@@ -75,15 +75,16 @@ module.exports = {
                     if (val > max) { max = val; } // set the new max value
                     if (val < min) { min = val; } // set the new min value
                     n += val;
-                    indivRolls += "\nRoll " + (i + 1) + ": " + val;
+                    indivRolls += " " + val;
+                    if (i != rolls - 1) { indivRolls += " +"; }
                 }
 
                 // display the result to the user
                 if (rolls === 1) {
                     msg.reply("you rolled a " + n + "!");
                 } else {
-                    msg.reply("you rolled " + rolls + " dice for a total of " + n + "!" + indivRolls +
-                                "\nMax roll: " + max + "\t\tMin roll: " + min);
+                    msg.reply("rolling " + rolls + "d" + sides + ":" + indivRolls + "\nTotal: " + n +
+                                "\t\tMax roll: " + max + "\t\tMin roll: " + min);
                 }
             } else if (rolls > limitRolls) {    // error message for too many dice (to prevent program loops bogging down the bot)
                 msg.reply("you rolled too many dice (limit = " + limitRolls + ")");
