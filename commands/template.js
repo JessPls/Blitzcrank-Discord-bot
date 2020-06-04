@@ -17,15 +17,15 @@ module.exports = {
         .setDescription('Description:\n' +
                         module.exports.description +
                         "\n\n" +
-                        'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!command option option option"\n' +                //configuration of arguments
+                        'Syntax: \n\n' +                        // should have a set of syntax, example, and output for each possible
+                        '"!command option option option"\n' +   // configuration of arguments
                             'Example: ""\n' + 
                             'Output:  ""\n\n' + 
                         'Other Information:\n' + 
                         '');
         if (/* other error handing arguments */true || args[1].toLocaleLowerCase() == "help") {
-            msg.channel.send(/*commandName*/Help);}
-        else {
+            msg.channel.send(/*commandName*/Help);
+        } else {
 
             /*
              * Main body of code

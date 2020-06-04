@@ -13,7 +13,7 @@ module.exports = {
         var listOfCommands = //"List of Commands:\n" + 
                                 "!ping - Pings the bot\n" +
                                 "!info <version,author,purpose,wiki> - See information about this bot\n" +
-                                "!dice {number} {amount} - Rolls a die with <number> of sides <amount> times\n" +
+                                "!dice {number} {sides} - Rolls <number> die with <sides> number of sides\n" +
                                 "!chance <thing> - Tells you the chance that <thing> will happen with 100% accuracy\n" +
                                 "!8ball {question} - Give you a magic 8 ball response to <question>\n" +
                                 "!insult <person> - Insults <person> with a random insult\n" +
