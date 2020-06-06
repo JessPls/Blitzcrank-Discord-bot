@@ -11,6 +11,8 @@
  */
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const cheerio = require('cheerio');
+const request = require('request');
 
 // prefix used for recognizing when the user is using a command
 const PREFIX = '!';
@@ -41,7 +43,6 @@ bot.on('message', msg=>{
     else {
         // get the command name if the prefix is used
         let args = msg.content.substring(PREFIX.length).split(" ");
-
         // interpret the commands
         switch(args[0].toLocaleLowerCase()) {
             // ping command for testing responsiveness
@@ -90,6 +91,12 @@ bot.on('message', msg=>{
                 bot.commands.get('commands').execute(msg, args, Discord);
                 break;
             // command for setting up bot messages on the server, will be removed/improved later
+            case 'meme':
+                bot.commands.get('meme').execute(msg, args, Discord, cheerio, request);
+                break;
+            //case 'image':
+            //    bot.commands.get('image').execute(msg, args, Discord, cheerio, request);
+            //    break;
             /**case 'setup':
                 bot.commands.get('setup').execute(msg, args);
                 break;*/
