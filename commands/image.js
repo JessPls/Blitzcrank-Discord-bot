@@ -21,7 +21,7 @@
                         'Example: "!image cute puppies"\n\n' + 
                         'Other Information:\n' + 
                         'Images loaded are based on the google.com search engine and are essentially random. User assumes all risk.');
-        if (!args[1] || args[1] && args[1].toLocaleLowerCase() == "help") {
+        if (!args[1] || (args[1] && args[1].toLocaleLowerCase() == "help")) {
             msg.channel.send(imageHelp);
         } else {
 

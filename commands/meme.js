@@ -24,7 +24,7 @@
             msg.channel.send(memeHelp);
         } else {
 
-            var numOptions = 10
+            const numOptions = 10
             var searchNumber = Math.floor(Math.random() * numOptions)
             var searchString = ""
             switch (searchNumber) {
@@ -74,7 +74,7 @@
             };
          
             request(options, function(error, response, responseBody) {
-                if (error) {return;}   //exits function if error
+                if (error) { return; }   //exits function if error
 
                 $ = cheerio.load(responseBody);    //very important, don't know why
                 var links = $(".image a.link");    // ditto^
