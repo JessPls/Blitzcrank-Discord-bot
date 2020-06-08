@@ -24,9 +24,9 @@
             msg.channel.send(memeHelp);
         } else {
 
-            const numOptions = 10
-            var searchNumber = Math.floor(Math.random() * numOptions)
-            var searchString = ""
+            const numOptions = 10;
+            var searchNumber = Math.floor(Math.random() * numOptions);
+            var searchString = "";
             switch (searchNumber) {
                 case 0:
                     searchString = "meme";
@@ -80,7 +80,7 @@
                 var links = $(".image a.link");    // ditto^
                 var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));   //databases (all?) possible results
                 //console.log(urls);              //gives log in console of (all?) possible results (unnecessary)
-                if (!urls.length) {return;}    //exits if no image URLs gathered (which would error the send command)
+                if (!urls.length) { return; }    //exits if no image URLs gathered (which would error the send command)
                 // Send result
                 msg.channel.send( urls[Math.floor(Math.random() * urls.length)]);
             });
