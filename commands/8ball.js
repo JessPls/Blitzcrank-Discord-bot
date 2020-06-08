@@ -1,22 +1,38 @@
 /**
  * The 8ball command generates a random classic magic 8 ball response to the user
+ * v1.1.0 - Added !8ball help command
  * 
  * @author Jess Queen
+ * @author Joel Kophazi
  */
 module.exports = {
     name: "8ball",
     description: "generates a magic 8 ball message, can be in response to a question",
-    execute(msg, args) {
-        var response = "";
+    execute(msg, args, Discord) {
+        const /*commandName*/Help = new Discord.MessageEmbed()
+        .setColor(0xFFD700)
+        .setTitle("Help - " + module.exports.name)
+        .setDescription('Description:\n' +
+                        module.exports.description +
+                        "\n\n" +
+                        'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
+                        '"!8ball <optional question"\n' +                //configuration of arguments
+                            'Example: "!8ball should I mow the lawn tonight?"\n' + 
+                            'Output:  "Better not tell you now"\n\n' + 
+                        'Other Information:\n' + 
+                        'Answers are totally random. Any perceved intelligence is coincidental');
+        if (args[1] && args[1].toLocaleLowerCase() == "help") {
+            msg.channel.send(/*commandName*/Help);}
+        else {
+            var response = "";
             var num = Math.floor(Math.random() * 20 + 1);
-
             // get the appropriate magic 8 ball response
             if (num == 1) {
                 response = "as I see it, yes.";
             } else if (num == 2) {
                 response = "ask again later.";
             } else if (num == 3) {
-                response = "aetter not tell you now.";
+                response = "better not tell you now.";
             } else if (num == 4) {
                 response = "cannot predict now";
             } else if (num == 5) {
@@ -52,7 +68,7 @@ module.exports = {
             } else {
                 response = "you may rely on it.";
             }
-
             msg.reply(response);
+        }
     }
 }
