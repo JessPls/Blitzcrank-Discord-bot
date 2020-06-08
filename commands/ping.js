@@ -1,8 +1,8 @@
 /**
  * The ping command pings the bot, and is a very simple command
- * 
  * This command was used for testing if the bot was online, and was written
  * by CodeLyon (https://www.youtube.com/watch?v=8CwrJk0lwWQ&t=528s)
+ * v1.1.0 - added !ping help command, overall a very useless addition, but made for uniformity
  * 
  * @author CodeLyon
  */

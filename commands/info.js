@@ -1,15 +1,15 @@
 /**
  * The info command allows the user to see many different things about the bot, such as the
  * current version or the author of the bot
- * 
  * v1.0.2 - Added purpose easter egg, command now works regardless of case
+ * v1.1.0 - changes syntax handler to switch/case system, updated version number, added !info help command
  * 
  * @author Jess Queen
  * @author Joel Kophazi
  */
 
 // the bot version
-var version = "1.0.2";
+var version = "1.1.0";
 
 module.exports = {
     name: 'info',

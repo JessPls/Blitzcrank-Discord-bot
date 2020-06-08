@@ -1,8 +1,10 @@
 /**
  * The choice command creates a poll where users can choose between two options by
  * reacting to the message with "A" or "B" emojis
+ * v1.1.0 - Added user info at the start of the vote, added !choice help command
  * 
  * @author Jess Queen
+ * @author Joel Kophazi
  */
 module.exports = {
     name: "choice",

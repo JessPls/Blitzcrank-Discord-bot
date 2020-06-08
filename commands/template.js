@@ -1,8 +1,6 @@
 /**
  * Basic description
- *
  * Version - changes
- * version - changes
  * version - changes
  * 
  * @author /*name*/

@@ -2,6 +2,7 @@
  * The commands command will list all of the commands in the bot
  * 
  * v1.0.2 - Updated dice command description
+ * v1.1.0 - added !meme, modified !pick to reflect multiple choices
  * 
  * @author Jess Queen
  * @author Joel Kophazi
@@ -20,6 +21,7 @@ module.exports = {
                                 "!choice <thing1> or <thing2> - Generate a choice between two options\n" +
                                 "!pick <thing1> or <thing2> or ... - Make the bot pick between two or more things\n" +
                                 "!poll <question> - Generate a simple yes/no poll\n" +
+                                "!meme - Gives you a random meme;\n" + 
                                 "!commands - List all valid commands this bot offers\n\n" +
                                 "{text} - optional\n<text> - required"
             const commands = new Discord.MessageEmbed()

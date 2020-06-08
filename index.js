@@ -4,6 +4,8 @@
  * The framework for the Command Handler was written by CodeLyon (https://www.youtube.com/watch?v=8CwrJk0lwWQ&t=528s)
  * 
  * v1.0.2 - Added support for Capitalized commands
+ * v1.1.0 - directed !help to !commands, added !meme and !image support, 
+ *          added cheerio and request packets for !meme command, added default invalid command handler
  * 
  * @author CodeLyon
  * @author Jess Queen

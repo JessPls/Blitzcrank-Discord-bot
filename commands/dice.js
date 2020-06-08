@@ -1,7 +1,7 @@
 /**
  * The dice command will roll a standard 6 sided die, or a die with as many sides as the user wants.
  * This depends on whether the user gives a numerical parameter or not
- * v1.0.2 - Now may roll multiple dice, up to a limit, accept the #d# format commonly used for DnD, and has a !dice Help responce
+ * v1.1.0 - Now may roll multiple dice, up to a limit, accept the #d# format commonly used for DnD, and has a !dice Help responce
  * 
  * @author Jess Queen
  * @author Joel Kophazi

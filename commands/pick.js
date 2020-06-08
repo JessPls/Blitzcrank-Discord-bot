@@ -1,7 +1,8 @@
 /**
  * The pick command makes the bot choose between two options that are separated by "or"
  * 
- * v1.0.2 Added the ability to pick between more than 2 options, removed case sensitivity
+ * v1.0.2 - Added the ability to pick between more than 2 options, removed case sensitivity
+ * v1.1.0 - added !pick help command
  * 
  * @author Jess Queen
  */

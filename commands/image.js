@@ -1,9 +1,6 @@
 /**
  * Makes a image appear in discord chat, based off of the image-only service "dogpile", that also limits images per page.
- *
- * Version - changes
- * version - changes
- * version - changes
+ *v1.1.0 - Implemented, but blocked for unmonitored abuse concerns
  * 
  * @author Codelyon
  * @author Joel Kophazi

@@ -1,7 +1,7 @@
 /**
  * The poll command creates a simple yes or no poll for the users to react to
- * 
  * The basic poll command code was written by CodeLyon (https://www.youtube.com/watch?v=x4fqeYSWrDM&t=619s)
+ * v1.1.0 - added user information at start of poll message, added !poll help command
  * 
  * @author CodeLyon
  * @author Jess Queen

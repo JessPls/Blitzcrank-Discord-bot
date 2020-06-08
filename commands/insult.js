@@ -1,6 +1,7 @@
 /**
  * The insult command picks a random insult to use on a specified target. This command
  * is meant to be used for fun, and the insults are mostly classic sci-fi quotes
+ * v1.1.0 - added !insult help command
  * 
  * @author Jess Queen
  */

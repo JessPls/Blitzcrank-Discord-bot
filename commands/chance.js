@@ -1,8 +1,10 @@
 /**
  * The chance command randomly generates a percentage chance that an event will happen,
  * and informs the user of this chance
+ * v1.1.0 - added !chance help command, changed grammer correction to switch/case
  * 
  * @author Jess Queen
+ * @author Joel Kophazi
  */
 module.exports = {
     name: "chance",

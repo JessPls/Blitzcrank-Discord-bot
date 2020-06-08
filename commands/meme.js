@@ -1,10 +1,7 @@
 /**
  * Makes a meme appear in discord chat, based off of the image-only service "dogpile", that also limits images per page.
+ * v1.1.0 - Implemented, with random chance for various game references
  *
- * Version - changes
- * version - changes
- * version - changes
- * 
  * @author Codelyon
  * @author Joel Kophazi
  */

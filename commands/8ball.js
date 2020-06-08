@@ -1,7 +1,9 @@
 /**
  * The 8ball command generates a random classic magic 8 ball response to the user
+ * v1.1.0 - Added !8ball help command
  * 
  * @author Jess Queen
+ * @author Joel Kophazi
  */
 module.exports = {
     name: "8ball",
