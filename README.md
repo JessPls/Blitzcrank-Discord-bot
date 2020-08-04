@@ -10,8 +10,8 @@ Please use the following steps to set up Blitzcrank in your own server:
  - Reveal your bot's token and copy this value for later
  - Make sure you have Node.js downloaded
  - Download this repository and put it into a folder on your Desktop, Documents, etc.
- - Open up the index.js file in an IDE of your choosing and change the value of the "TOKEN" constant to your bot's token
  - Open up Terminal (Mac) or Command Prompt (Windows)
+ - Create an environment variable called TOKEN and set it to the bot's token you copied. Do this with the command "set TOKEN=<token>"
  - Navigate to the folder that you put this repository's contents in (use the cd command)
  - Input "node run index.js" in Terminal/Command Prompt
  - The bot should be working in your Discord, go try it out!
