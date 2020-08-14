@@ -9,7 +9,7 @@
  */
 
 // the bot version
-var version = "1.1.1";
+var version = "1.1.2";
 
 module.exports = {
     name: 'info',

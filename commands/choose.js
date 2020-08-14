@@ -3,31 +3,32 @@
  * 
  * v1.0.2 - Added the ability to pick between more than 2 options, removed case sensitivity
  * v1.1.0 - added !pick help command
+ * v1.1.2 - changed "pick" to "choose"
  * 
  * @author Jess Queen
  */
 module.exports = {
-    name: "pick",
-    description: "Makes the bot pick between two options",
+    name: "choose",
+    description: "Makes the bot choose between two options",
     execute(msg, args, Discord) {
         // create a help embed if needed
-        const pickHelp = new Discord.MessageEmbed()
+        const chooseHelp = new Discord.MessageEmbed()
         .setColor(0xFFD700)
-        .setTitle("Help - Pick")
+        .setTitle("Help - choose")
         .setDescription('Description:\n' +
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!pick <choice1> or <choice2> or ..."\n' +                //configuration of arguments
-                            'Example: "!pick this or that or these or those"\n' + 
-                            'Output:  ""I pick these!""\n\n');
+                        '"!choose <choice1> or <choice2> or ..."\n' +                //configuration of arguments
+                            'Example: "!choose this or that or these or those"\n' + 
+                            'Output:  "I choose these!"\n\n');
         // invalid command or help command
-        if (!(args.includes("or") || !args.includes("Or") || !args.includes("oR") ||
-            !args.includes("OR")) || args[1].toLocaleLowerCase() == "help") {
-            msg.reply(pickHelp);}
-        else {
+        if (!(args.includes("or") || args.includes("Or") || args.includes("oR") ||
+            args.includes("OR")) || (args.length >= 2 && args[1].toLocaleLowerCase() == "help")) {
+            msg.reply(chooseHelp);
+        } else {
             const OR = "or";
-            var choice = "I pick ";
+            var choice = "I choose ";
             var curChoice = "";
             var numChoices = 0;
             var options = [];
@@ -38,7 +39,7 @@ module.exports = {
                     options.push(curChoice);
                     curChoice = "";
                     numChoices++;
-                    // make sure there is something after the or
+                    // make sure there is something after the "or"
                     if (!args[i + 1]) {
                         msg.reply(pickHelp);
                         return;

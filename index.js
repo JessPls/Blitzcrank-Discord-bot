@@ -74,12 +74,12 @@ bot.on('message', msg=>{
                 bot.commands.get('insult').execute(msg, args, Discord);
                 break;
             // command for choosing between two options
-            case 'choice':
-                bot.commands.get('choice').execute(msg, args, Discord);
+            case 'mcpoll':
+                bot.commands.get('mcpoll').execute(msg, args, Discord);
                 break;
             // command for making the bot choose between 2 options
-            case 'pick':
-                bot.commands.get('pick').execute(msg, args, Discord);
+            case 'choose':
+                bot.commands.get('choose').execute(msg, args, Discord);
                 break;
             // command for creating a poll with 2 options
             case 'poll':
@@ -101,9 +101,6 @@ bot.on('message', msg=>{
             // command for searching for an image on the web. Disabled until a content filter can be applied
             /**case 'image':
                 bot.commands.get('image').execute(msg, args, Discord, cheerio, request);
-                break;*/
-            /**case 'setup':
-                bot.commands.get('setup').execute(msg, args);
                 break;*/
             // default option for an invalid command
             default:
