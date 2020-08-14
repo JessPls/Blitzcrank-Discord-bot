@@ -11,15 +11,10 @@ module.exports = {
     execute(msg, args, Discord) {
         const changelog = new Discord.MessageEmbed()
         .setColor(0xFFD700)
-        .setTitle("Changelog Version 1.1.0")
-        .setDescription(" - Changed the !dice command to allow multiple dice to be rolled at once\n" +
-                        " - Changed the !pick command to be able to pick between more than 2 options\n" +
-                        " - Added help options for all commands that can be accessed with !<command> help\n" +
-                        " - Added fallback for invalid commands\n" +
-                        " - Updated the !commands command to be more descriptive\n" +
-                        " - Added a random meme generator\n" +
-                        " - Added an easter egg (Shhh it's a secret!)\n" +
-                        " - Bug fixes");
+        .setTitle("Changelog Version 1.1.1")
+        .setDescription(" - Updated bot for hosting on the cloud so Blitzcrank is available more often!\n" +
+                         " - Improved bot info security\n" +
+                         " - Updated README installation file to accurately reflect changes");
         
         msg.channel.send(changelog);
     }

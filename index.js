@@ -23,8 +23,8 @@ const PREFIX = '!';
 const fs = require('fs');
 bot.commands = new Discord.Collection();
 
-// token used for activating the bot. Please create your own token.txt file
-const TOKEN = fs.readFileSync('token.txt', 'utf8');
+// token used for activating the bot. Obsolete
+// const TOKEN = fs.readFileSync('token.txt', 'utf8');
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
@@ -41,7 +41,9 @@ bot.on('ready', () =>{
 
 // perform commands
 bot.on('message', msg=>{
-    if (msg.author === bot.user || msg.content.substring(0,1) !== PREFIX) {}
+    if (msg.author === bot.user || msg.content.substring(0,1) !== PREFIX) {
+        // don't do anything
+    }
     else {
         // get the command name if the prefix is used
         let args = msg.content.substring(PREFIX.length).split(" ");
@@ -110,4 +112,4 @@ bot.on('message', msg=>{
     }
 })
 
-bot.login(TOKEN);
+bot.login(process.env.TOKEN);
