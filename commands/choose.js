@@ -9,7 +9,7 @@
  */
 module.exports = {
     name: "choose",
-    description: "Makes the bot choose between two options",
+    description: "Makes the bot choose between 2+ options",
     execute(msg, args, Discord) {
         // create a help embed if needed
         const chooseHelp = new Discord.MessageEmbed()
@@ -25,7 +25,7 @@ module.exports = {
         // invalid command or help command
         if (!(args.includes("or") || args.includes("Or") || args.includes("oR") ||
             args.includes("OR")) || (args.length >= 2 && args[1].toLocaleLowerCase() == "help")) {
-            msg.reply(chooseHelp);
+            msg.channel.send(chooseHelp);
         } else {
             const OR = "or";
             var choice = "I choose ";

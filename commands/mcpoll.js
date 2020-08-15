@@ -10,7 +10,7 @@
  */
 module.exports = {
     name: "mcpoll",
-    description: "creates a poll where the user can choose between 2+ options",
+    description: "creates a reaction poll with 2-5 options",
     execute(msg, args, Discord) {
         const mcpollHelp = new Discord.MessageEmbed()
         .setColor(0xFFD700)
