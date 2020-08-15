@@ -73,7 +73,7 @@ bot.on('message', msg=>{
             case 'insult':
                 bot.commands.get('insult').execute(msg, args, Discord);
                 break;
-            // command for choosing between two options
+            // command for creating a poll with 2-5 options
             case 'mcpoll':
                 bot.commands.get('mcpoll').execute(msg, args, Discord);
                 break;
@@ -81,7 +81,7 @@ bot.on('message', msg=>{
             case 'choose':
                 bot.commands.get('choose').execute(msg, args, Discord);
                 break;
-            // command for creating a poll with 2 options
+            // command for creating a poll with yes/no options
             case 'poll':
                 bot.commands.get('poll').execute(msg, args, Discord);
                 break;

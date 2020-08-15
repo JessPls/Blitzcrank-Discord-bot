@@ -19,7 +19,7 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' + 
-                        '"!mcpoll <option 1> | <option 2>, ..."\n' +
+                        '"!mcpoll <option 1> | <option 2> | ..."\n' +
                         'Example: "!mcpoll Hamburgers | Hotdogs"\n');
         if (!args.includes("|") || args[1].toLocaleLowerCase() == "help") {
             msg.channel.send(mcpollHelp);
