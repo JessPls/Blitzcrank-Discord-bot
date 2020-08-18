@@ -19,25 +19,29 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' + 
-                        '"!mcpoll <option 1> | <option 2> | ..."\n' +
-                        'Example: "!mcpoll Hamburgers | Hotdogs"\n');
+                        '"!mcpoll <question> | <option 1> | <option 2> | ..."\n' +
+                        'Example: "!mcpoll Which is better: | Hamburgers | Hotdogs"\n');
         if (!args.includes("|") || args[1].toLocaleLowerCase() == "help") {
             msg.channel.send(mcpollHelp);
             return;
         } else {
             const LINE = "|";
+            var question = "";
             var choice1 = "";
             var choice2 = "";
             var choice3 = "";
             var choice4 = "";
             var choice5 = "";
-            var numOptions = 1;
+            var numOptions = 0;
 
             for (var i = 1; i < args.length; i++) {
                 if (args[i].toLocaleLowerCase() === LINE && i != args.length - 1) {
                     numOptions += 1;
                 } else if (args[i].toLocaleLowerCase() !== LINE) {
                     switch (numOptions) {
+                        case 0:
+                            question += args[i] + " ";
+                            break;
                         case 1:
                             choice1 += args[i] + " ";
                             break;
@@ -66,7 +70,8 @@ module.exports = {
                 msg.reply(" you must have at least 2 options!");
                 return;
             } else {
-                outputMsg += msg.author.username + " has started a multiple choice poll!\n1️⃣ - " + choice1 + "\n2️⃣ - " + choice2;
+                outputMsg += msg.author.username + " has started a multiple choice poll!\n\n" + question
+                            + "\n1️⃣ - " + choice1 + "\n2️⃣ - " + choice2;
 
                 // if statements for additional choices
                 if (numOptions >= 3) {

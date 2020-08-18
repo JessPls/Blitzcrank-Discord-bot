@@ -21,7 +21,7 @@ module.exports = {
                                 "!insult <person> - Insults <person> with a random insult\n" +
                                 "!choose <thing1> or <thing2> or ... - Make the bot choose between two or more things\n" +
                                 "!poll <question> - Generate a simple yes/no poll\n" +
-                                "!mcpoll <thing1> | <thing2> | ... - Generate a multiple choice poll between 2-5 options\n" +
+                                "!mcpoll <question> | <thing1> | <thing2> | ... - Generate a multiple choice poll between 2-5 options\n" +
                                 "!meme - Gives you a random meme;\n" + 
                                 "!commands - List all valid commands this bot offers\n\n" +
                                 "{text} - optional\n<text> - required"

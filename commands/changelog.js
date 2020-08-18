@@ -14,7 +14,7 @@ module.exports = {
         .setTitle("Changelog Version 1.1.2")
         .setDescription(" - Renamed !choice to !mcpoll (short for multiple choice poll) "
                         + "to make the command name less confusing\n"
-                        + " - Changed !mcpoll syntax to be more intuitive. Now choices are separated by a | instead of 'or'\n"
+                        + " - Changed !mcpoll syntax to be more intuitive. Now includes the question, and choices are separated by a | instead of 'or'\n"
                         + " - Fixed a bug in !mcpoll that would incorrectly display delimiter "
                         + "characters if they were used at the end of the command\n"
                         + " - Changed !pick to !choose to make the command name less confusing\n"
