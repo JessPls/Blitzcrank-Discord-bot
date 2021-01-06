@@ -98,6 +98,13 @@ bot.on('message', msg=>{
             case 'meme':
                 bot.commands.get('meme').execute(msg, args, Discord, cheerio, request);
                 break;
+            // command that plays off of Among Us, tells the user whether something is suspicious or not
+            case 'sus':
+                bot.commands.get('sus').execute(msg, args, Discord);
+                break;
+            case 'ttt':
+                bot.commands.get('ttt').execute(msg, args, Discord);
+                break;
             // command for searching for an image on the web. Disabled until a content filter can be applied
             /**case 'image':
                 bot.commands.get('image').execute(msg, args, Discord, cheerio, request);

@@ -11,15 +11,14 @@ module.exports = {
     execute(msg, args, Discord) {
         const changelog = new Discord.MessageEmbed()
         .setColor(0xFFD700)
-        .setTitle("Changelog Version 1.1.2")
-        .setDescription(" - Renamed !choice to !mcpoll (short for multiple choice poll) "
-                        + "to make the command name less confusing\n"
-                        + " - Changed !mcpoll syntax to be more intuitive. Now includes the question, and choices are separated by a | instead of 'or'\n"
-                        + " - Fixed a bug in !mcpoll that would incorrectly display delimiter "
-                        + "characters if they were used at the end of the command\n"
-                        + " - Changed !pick to !choose to make the command name less confusing\n"
-                        + " - Updated help options for both !mcpoll and !choose"
-                        + " - Updated !commands to reflect these new syntax changes");
+        .setTitle("Changelog Version 1.2.0")
+        .setDescription(" - Added the !sus command, based off of Among Us. Blitzcrank will tell you" +
+                        " whether something is sus or not, with reasoning\n" +
+                        " - Added the !ttt command, which allows users to play Tic-tac-toe against" +
+                        " each other in Discord! Sub-commands include !ttt join, !ttt leave, !ttt <num>\n" +
+                        " - Began implementing an organization structure that would allow for other Discord" +
+                        " games to be possible in the future\n" +
+                        " - Bug fixes");
         
         msg.channel.send(changelog);
     }

@@ -9,7 +9,7 @@
  */
 
 // the bot version
-var version = "1.1.2";
+var version = "1.2.0";
 
 module.exports = {
     name: 'info',
@@ -29,7 +29,8 @@ module.exports = {
                         'Only enter one option from the list given');
         if (!args[1]) {
             msg.channel.send(infoHelp);
-            return;} 
+            return;
+        } 
         switch(args[1].toLocaleLowerCase()){
             case 'version': 
                 msg.channel.send("Version " + version);
