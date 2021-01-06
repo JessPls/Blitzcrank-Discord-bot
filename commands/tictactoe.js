@@ -215,7 +215,7 @@ class Player {
                 if (playerQueue.length >= 2) {
                     game = new TicTacToeGame(playerQueue.pop(), playerQueue.pop());
                     msg.channel.send("A new game has started between " + game.player1.getName() + " and " + game.player2.getName());
-                    msg.channel.send(game.getBoard() + "\n" + game.player1.getName() + ", use !tictactoe <1-9> to place a ❌ on the board");
+                    msg.channel.send(game.getBoard() + "\n" + game.player1.getName() + ", use !ttt <1-9> to place a ❌ on the board");
                 } else {
                     msg.channel.send(p.getName() + " wants to play Tic-Tac-Toe! Waiting for a second player...")
                 }
@@ -259,7 +259,7 @@ class Player {
                             msg.channel.send("Cats! The game ended in a draw! Good game " + 
                                                 game.player1.getName() + " and " + game.player2.getName());
                         } else {
-                            msg.channel.send(game.currentTurn.getName() + ", use !tictactoe <1-9> to place a " +
+                            msg.channel.send(game.currentTurn.getName() + ", use !ttt <1-9> to place a " +
                                             game.currentTurn.getSymbol() + " on the board");
                         }
                     }
@@ -269,7 +269,7 @@ class Player {
                 // display an error message for invalid moves
                 } else {
                     msg.reply("invalid move! Please pick a number between 1-9 instead. " +
-                    "Use !tictactoe <1-9> to place a " + game.currentTurn.getSymbol() + " on the board");
+                    "Use !ttt <1-9> to place a " + game.currentTurn.getSymbol() + " on the board");
                 }
             // return an error message for players who entered an incorrect command
             } else {
