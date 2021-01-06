@@ -204,7 +204,7 @@ class Player {
                     var p1 = playerQueue.pop();
                     if (p1.getName() == msg.author.toString()) {
                         msg.channel.send("You are already waiting for a game! " + p1.getName());
-                        //return;
+                        return;
                     }
                     playerQueue.push(p1);
                 }
