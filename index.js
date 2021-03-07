@@ -73,15 +73,15 @@ bot.on('message', msg=>{
             case 'insult':
                 bot.commands.get('insult').execute(msg, args, Discord);
                 break;
-            // command for choosing between two options
-            case 'choice':
-                bot.commands.get('choice').execute(msg, args, Discord);
+            // command for creating a poll with 2-5 options
+            case 'mcpoll':
+                bot.commands.get('mcpoll').execute(msg, args, Discord);
                 break;
             // command for making the bot choose between 2 options
-            case 'pick':
-                bot.commands.get('pick').execute(msg, args, Discord);
+            case 'choose':
+                bot.commands.get('choose').execute(msg, args, Discord);
                 break;
-            // command for creating a poll with 2 options
+            // command for creating a poll with yes/no options
             case 'poll':
                 bot.commands.get('poll').execute(msg, args, Discord);
                 break;
@@ -98,16 +98,20 @@ bot.on('message', msg=>{
             case 'meme':
                 bot.commands.get('meme').execute(msg, args, Discord, cheerio, request);
                 break;
+            // command that plays off of Among Us, tells the user whether something is suspicious or not
+            case 'sus':
+                bot.commands.get('sus').execute(msg, args, Discord);
+                break;
+            case 'ttt':
+                bot.commands.get('ttt').execute(msg, args, Discord);
+                break;
             // command for searching for an image on the web. Disabled until a content filter can be applied
             /**case 'image':
                 bot.commands.get('image').execute(msg, args, Discord, cheerio, request);
                 break;*/
-            /**case 'setup':
-                bot.commands.get('setup').execute(msg, args);
-                break;*/
             // default option for an invalid command
             default:
-                msg.reply("invald command! Please use !commands to see a list of all valid commands.");
+                // msg.reply("invald command! Please use !commands to see a list of all valid commands.");
         }
     }
 })

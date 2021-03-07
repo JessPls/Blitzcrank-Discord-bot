@@ -20,19 +20,15 @@ module.exports = {
                         'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
                         '"!poll <question>"\n' +                //configuration of arguments
                             'Example: "!poll Should trees be clasiffied as snails?"\n\n');
-        if (args[1] && args[1].toLocaleLowerCase() == "help") {
-            msg.channel.send(pollHelp);}
-        else {
-            if (!args[1]) {
-                msg.channel.send(Embed);}
-            else {
-                let question = args.slice(1).join(" ");
-                msg.channel.send(msg.author.username + " started a poll!\n" + question).then(messageReaction  => {
-                    messageReaction.react("👍");
-                    messageReaction.react("👎");
-                });
-                msg.delete();
-            }
+        if (args[1] && args[1].toLocaleLowerCase() == "help" || !args[1]) {
+            msg.channel.send(pollHelp);
+        } else {
+            let question = args.slice(1).join(" ");
+            msg.channel.send(msg.author.username + " started a poll!\n" + question).then(messageReaction  => {
+                messageReaction.react("👍");
+                messageReaction.react("👎");
+            });
+            msg.delete();
         }
     }
 }

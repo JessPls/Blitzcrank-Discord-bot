@@ -3,6 +3,8 @@
  * 
  * v1.0.2 - Updated dice command description
  * v1.1.0 - added !meme, modified !pick to reflect multiple choices
+ * v1.1.2 - changed !pick to !choose, !choice to !mcpoll
+ * v1.2.0 - added !sus and !ttt
  * 
  * @author Jess Queen
  * @author Joel Kophazi
@@ -18,10 +20,12 @@ module.exports = {
                                 "!chance <thing> - Tells you the chance that <thing> will happen with 100% accuracy\n" +
                                 "!8ball {question} - Give you a magic 8 ball response to <question>\n" +
                                 "!insult <person> - Insults <person> with a random insult\n" +
-                                "!choice <thing1> or <thing2> - Generate a choice between two options\n" +
-                                "!pick <thing1> or <thing2> or ... - Make the bot pick between two or more things\n" +
+                                "!choose <thing1> or <thing2> or ... - Make the bot choose between two or more things\n" +
                                 "!poll <question> - Generate a simple yes/no poll\n" +
-                                "!meme - Gives you a random meme;\n" + 
+                                "!mcpoll <question> | <thing1> | <thing2> | ... - Generate a multiple choice poll between 2-5 options\n" +
+                                "!meme - Gives you a random meme\n" +
+                                "!sus <thing> - Tells you whether something is suspicious or not, inspired by Among Us\n" +
+                                "!ttt <join/leave/number 1-9> - Allows you to play Tic-tac-toe against other users\n" +
                                 "!commands - List all valid commands this bot offers\n\n" +
                                 "{text} - optional\n<text> - required"
             const commands = new Discord.MessageEmbed()
