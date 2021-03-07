@@ -111,7 +111,7 @@ bot.on('message', msg=>{
                 break;*/
             // default option for an invalid command
             default:
-                msg.reply("invald command! Please use !commands to see a list of all valid commands.");
+                // msg.reply("invald command! Please use !commands to see a list of all valid commands.");
         }
     }
 })
