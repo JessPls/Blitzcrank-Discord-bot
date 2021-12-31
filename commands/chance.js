@@ -17,8 +17,8 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!chance <scenario>"\n' +                //configuration of arguments
-                            'Example: "!chance the next update has no bugs"\n' + 
+                        '".chance <scenario>"\n' +                //configuration of arguments
+                            'Example: ".chance the next update has no bugs"\n' + 
                             'Output:  "The chance the next update has no bugs is 4%"\n\n');
         if (args[1] && args[1].toLocaleLowerCase() == "help" || !args[1]) {
             msg.channel.send(Help);

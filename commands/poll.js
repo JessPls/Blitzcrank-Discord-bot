@@ -17,9 +17,9 @@ module.exports = {
         .setDescription('Description:\n' +
                         module.exports.description +
                         "\n\n" +
-                        'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!poll <question>"\n' +                //configuration of arguments
-                            'Example: "!poll Should trees be clasiffied as snails?"\n\n');
+                        'Syntax: \n\n' +                         //should have a set of syntax, example, and output for each possible
+                        '".poll <question>"\n' +                //configuration of arguments
+                            'Example: ".poll Is ketchup a smoothie?"\n\n');
         if (args[1] && args[1].toLocaleLowerCase() == "help" || !args[1]) {
             msg.channel.send(pollHelp);
         } else {

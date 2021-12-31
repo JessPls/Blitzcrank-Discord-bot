@@ -17,7 +17,7 @@
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +                        // should have a set of syntax, example, and output for each possible
-                        '"!meme"\n\n' + 
+                        '".meme"\n\n' + 
                         'Other Information:\n' + 
                         'Images loaded are based on the google.com search engine and are essentially random. User assumes all risk.');
         if (args[1] && args[1].toLocaleLowerCase() == "help") {

@@ -6,6 +6,7 @@
  * v1.0.2 - Added support for Capitalized commands
  * v1.1.0 - directed !help to !commands, added !meme and !image support, 
  *          added cheerio and request packets for !meme command, added default invalid command handler
+ * v1.3.0 - Changed command prefix from ! to .
  * 
  * @author CodeLyon
  * @author Jess Queen
@@ -17,7 +18,7 @@ const cheerio = require('cheerio');
 const request = require('request');
 
 // prefix used for recognizing when the user is using a command
-const PREFIX = '!';
+const PREFIX = '.';
 
 // set up the command handler
 const fs = require('fs');
@@ -41,11 +42,8 @@ bot.on('ready', () =>{
 
 // perform commands
 bot.on('message', msg=>{
-    if (msg.author === bot.user || msg.content.substring(0,1) !== PREFIX) {
-        // don't do anything
-    }
-    else {
-        // get the command name if the prefix is used
+    if (msg.author != bot.user || msg.content.substring(0,1) === PREFIX) {
+        // get the command name
         let args = msg.content.substring(PREFIX.length).split(" ");
         // interpret the commands
         switch(args[0].toLocaleLowerCase()) {
@@ -99,19 +97,16 @@ bot.on('message', msg=>{
                 bot.commands.get('meme').execute(msg, args, Discord, cheerio, request);
                 break;
             // command that plays off of Among Us, tells the user whether something is suspicious or not
-            case 'sus':
-                bot.commands.get('sus').execute(msg, args, Discord);
-                break;
+            // case 'sus':
+            //     bot.commands.get('sus').execute(msg, args, Discord);
+            //     break;
+            // command for playing tic-tac-toe with other people
             case 'ttt':
                 bot.commands.get('ttt').execute(msg, args, Discord);
                 break;
-            // command for searching for an image on the web. Disabled until a content filter can be applied
-            /**case 'image':
-                bot.commands.get('image').execute(msg, args, Discord, cheerio, request);
-                break;*/
-            // default option for an invalid command
-            default:
-                // msg.reply("invald command! Please use !commands to see a list of all valid commands.");
+            case 'hangman':
+                bot.commands.get('hangman').execute(msg, args, Discord);
+                break;
         }
     }
 })

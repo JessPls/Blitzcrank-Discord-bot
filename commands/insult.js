@@ -16,8 +16,8 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!Insult <name>"\n' +                //configuration of arguments
-                            'Example: "!insult Dwight Schrute"\n' + 
+                        '".Insult <name>"\n' +                //configuration of arguments
+                            'Example: ".insult Dwight Schrute"\n' + 
                             'Output:  "Dwight Schrute Freaking idiot"\n\n' + 
                         'Other Information:\n' + 
                         'Convienently works well with the "@user" discord system');

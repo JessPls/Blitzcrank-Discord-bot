@@ -16,10 +16,10 @@ module.exports = {
         .setDescription('Description:\n' +
                         module.exports.description +
                         "\n\n" +
-                        'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!ping"\n' +                //configuration of arguments
-                            'Example: "!ping"\n' + 
-                            'Output:  "!ping"\n\n' + 
+                        'Syntax: \n\n' +              //should have a set of syntax, example, and output for each possible
+                        '".ping"\n' +                //configuration of arguments
+                            'Example: ".ping"\n' + 
+                            'Output:  "@Jess, Pong!"\n\n' + 
                         'Other Information:\n');
         if (args[1] && args[1].toLocaleLowerCase() == "help") {
             msg.channel.send(pingHelp);

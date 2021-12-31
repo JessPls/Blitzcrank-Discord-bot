@@ -3,6 +3,8 @@
  * based on the popular game Among Us. There is a 2 in 10 chance that something or
  * someone is sus, with different reasonings for each number
  * 
+ * v1.3.0 - disabled due to lack of use
+ * 
  * @author Jess Queen
  */
 module.exports = {
@@ -16,8 +18,8 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +           //should have a set of syntax, example, and output for each possible
-                        '"!sus <thing>"\n' +      //configuration of arguments
-                            'Example: "!sus Jess"\n' + 
+                        '".sus <thing>"\n' +      //configuration of arguments
+                            'Example: ".sus Jess"\n' + 
                             'Output:  "Jess is sus! I saw them vent!"\n\n');
         if (args[1] && args[1].toLocaleLowerCase() == "help" || !args[1]) {
             msg.channel.send(help);

@@ -16,8 +16,8 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!8ball <optional question"\n' +                //configuration of arguments
-                            'Example: "!8ball should I mow the lawn tonight?"\n' + 
+                        '".8ball <optional question"\n' +                //configuration of arguments
+                            'Example: ".8ball should I mow the lawn tonight?"\n' + 
                             'Output:  "Better not tell you now"\n\n' + 
                         'Other Information:\n' + 
                         'Answers are totally random. Any perceved intelligence is coincidental');

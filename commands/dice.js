@@ -17,17 +17,17 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' + 
-                        '"!dice" - Rolls a 6-sided dice and give output \n' +
-                            'Example: !dice\n' +
+                        '".dice" - Rolls a 6-sided dice and give output \n' +
+                            'Example: .dice\n' +
                             'Output:  "You rolled a 4!"\n\n' +
-                        '"!dice <sides>" - Rolls a dice with <sides> number of sides\n' + 
-                            'Example: !dice 20\n' +
+                        '".dice <number of die>" - Rolls a dice with <sides> number of sides\n' + 
+                            'Example: .dice 20\n' +
                             'Output:  "You rolled a 13!"\n\n' +
-                        '"!dice <number of die> <sides>" - Rolls a dice with <sides> number of sides <number of die> times\n' +
-                            'Example: !dice 20 3\n' +
+                        '".dice <number of die> <sides>" - Rolls a dice with <sides> number of sides <number of die> times\n' +
+                            'Example: .dice 20 3\n' +
                             'Output:  "You rolled 3 dice for a total of 29!"\n\n' +
-                        '"!dice #d#" - Rolls a number of dice with a number of sides, formatted in dice notation\n' +
-                            'Example: !dice 4d12\n' +
+                        '".dice #d#" - Rolls a number of dice with a number of sides, formatted in dice notation\n' +
+                            'Example: .dice 4d12\n' +
                             'Output:  "You rolled 4 dice for a total of 27!"\n\n' + 
                         'Other Information:\n' + 
                             'All options must be numbers using the 0-9 keys');
@@ -42,18 +42,9 @@ module.exports = {
             var max = Number.MIN_SAFE_INTEGER
             const limitRolls = 20;
             const limitSides = 360;
-            if (args[2]) {
-                if (parseInt(args[2])) {
-                    sides = parseInt(args[2]);
-                } else {
-                    msg.reply("please make sure all options are numbers using the 0-9 keys");
-                    return;
-                }
-            }
 
             if (args[1]) {
                 if(parseInt(args[1])) {
-                    rolls = parseInt(args[1]);
 
                     //modifies the data in case of #d# format
                     var str = args[1].toLocaleLowerCase();
@@ -62,7 +53,25 @@ module.exports = {
                         var endlen = args[1].length;
                         rolls = parseInt(str.substring(0,r));
                         sides = parseInt(str.substring(r + 1,endlen));
+
+                        if (!(rolls & sides)) {
+                            msg.reply("please make sure all options are numbers using the 0-9 keys, " +
+                            "or you are doing DnD {Rolls}d{Sides} notation");
+                            return;
+                        }
+                    } else {
+                        rolls = parseInt(args[1]);
                     }
+                } else {
+                    msg.reply("please make sure all options are numbers using the 0-9 keys, " +
+                    "or you are doing DnD {Rolls}d{Sides} notation");
+                    return;
+                }
+            }
+
+            if (args[2]) {
+                if (parseInt(args[2])) {
+                    sides = parseInt(args[2]);
                 } else {
                     msg.reply("please make sure all options are numbers using the 0-9 keys");
                     return;

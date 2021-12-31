@@ -19,8 +19,8 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!choose <choice1> or <choice2> or ..."\n' +                //configuration of arguments
-                            'Example: "!choose this or that or these or those"\n' + 
+                        '".choose <choice1> or <choice2> or ..."\n' +                //configuration of arguments
+                            'Example: ".choose this or that or these or those"\n' + 
                             'Output:  "I choose these!"\n\n');
         // invalid command or help command
         if (!(args.includes("or") || args.includes("Or") || args.includes("oR") ||

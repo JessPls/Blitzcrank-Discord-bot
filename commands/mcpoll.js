@@ -19,8 +19,8 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' + 
-                        '"!mcpoll <question> | <option 1> | <option 2> | ..."\n' +
-                        'Example: "!mcpoll Which is better: | Hamburgers | Hotdogs"\n');
+                        '".mcpoll <question> | <option 1> | <option 2> | ..."\n' +
+                        'Example: ".mcpoll Which is better: | Hamburgers | Hotdogs"\n');
         if (!args.includes("|") || args[1].toLocaleLowerCase() == "help") {
             msg.channel.send(mcpollHelp);
             return;

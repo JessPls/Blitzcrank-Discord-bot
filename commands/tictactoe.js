@@ -177,14 +177,14 @@ class Player {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +                 //should have a set of syntax, example, and output for each possible
-                        '"!ttt join"\n' +                //configuration of arguments
-                            'Example: "!ttt join"\n' + 
+                        '".ttt join"\n' +                //configuration of arguments
+                            'Example: ".ttt join"\n' + 
                             'Output: "Jess wants to play Tic-Tac-Toe! Waiting for a second player..."\n\n' + 
-                        '"!ttt leave"\n' +
-                            'Example: "!ttt leave"\n' +
+                        '".ttt leave"\n' +
+                            'Example: ".ttt leave"\n' +
                             'Output: "Removed Jess from the player queue"\n\n' +
-                        '"!ttt <number 1-9>"\n' +
-                            'Example: "!ttt 8"\n' +
+                        '".ttt <number 1-9>"\n' +
+                            'Example: ".ttt 8"\n' +
                             'Output: "Jess placed an X at spot 8!"\n\n'
                         );
         // help message for if the user needs help with the command

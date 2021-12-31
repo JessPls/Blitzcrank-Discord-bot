@@ -9,7 +9,7 @@
  */
 
 // the bot version
-var version = "1.2.0";
+var version = "1.3.0";
 
 module.exports = {
     name: 'info',
@@ -22,8 +22,8 @@ module.exports = {
                         module.exports.description +
                         "\n\n" +
                         'Syntax: \n\n' +                                     //should have a set of syntax, example, and output for each possible
-                        '"!info <wiki/version/author/purpose>"\n' +                //configuration of arguments
-                            'Example: "!info version"\n' + 
+                        '".info <wiki/version/author/purpose>"\n' +                //configuration of arguments
+                            'Example: ".info version"\n' + 
                             'Output:  "Version ' + version + '"\n\n' + 
                         'Other Information:\n' + 
                         'Only enter one option from the list given');
@@ -63,7 +63,7 @@ module.exports = {
                 const wiki = new Discord.MessageEmbed()
                 .setColor(0xFFD700)
                 .setTitle("Blitzcrank Wiki")
-                .setURL("https://github.com/Koopafan75/Blitzcrank-Discord-bot/wiki");
+                .setURL("https://github.com/JessPls/Blitzcrank-Discord-bot/wiki");
                 msg.channel.send(wiki);
                 break;
             default:
